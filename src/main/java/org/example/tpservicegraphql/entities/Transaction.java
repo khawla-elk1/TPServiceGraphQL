@@ -21,14 +21,11 @@ public class Transaction {
 
     private double montant;
 
-    // Type de transaction : DEBIT ou RETRAIT
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeTransaction type;
 
-    // Définition de la relation Many-to-One : Plusieurs transactions peuvent appartenir à UN seul compte
+    // Relation Many-to-One
     @ManyToOne
-    @JoinColumn(name = "compte_id") // Clé étrangère dans la table Transaction
+    @JoinColumn(name = "compte_id")
     private Compte compte;
-
-    @Enumerated(EnumType.STRING) // Assure que l'Enum est stocké en tant que String dans la BDD
-    private TypeTransaction type1;
 }

@@ -26,4 +26,5 @@ public class Compte {
 
     @OneToMany(mappedBy = "compte", fetch = FetchType.LAZY)
     private List<Transaction> transactions; // <-- AJOUTEZ CETTE LIGNE
+
 }
